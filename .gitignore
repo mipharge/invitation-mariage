@@ -1,0 +1,8 @@
+.DS_Store
+photos/
+title/
+notre histoire/
+/pdfs/
+*.pdf
+!site/pdfs/*.pdf
+.claude/

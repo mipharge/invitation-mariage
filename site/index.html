@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serge &amp; Ayano vous invitent — Eus, 16 août 2026</title>
+<meta name="description" content="Serge et Ayano vous invitent à célébrer leur mariage le dimanche 16 août 2026 à Eus, Pyrénées-Orientales.">
+<meta property="og:title" content="Serge &amp; Ayano — 16 août 2026">
+<meta property="og:description" content="Une fête à Eus, Pyrénées-Orientales. Dimanche 16 août 2026.">
+<meta property="og:image" content="images/mariage-mains.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111111;
+  --ink-soft:#5a5a5a;
+  --paper:#ffffff;
+  --rule:#d8d8d8;
+  --mar:24px;
+  --serif:"Gilda Display","Playfair Display","Didot",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-weight:400;
+  font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;width:100%;height:auto}
+
+/* ---------- shared type ---------- */
+.label{
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-soft);font-weight:700;
+}
+.date{font-size:11px;letter-spacing:.06em;color:var(--ink-soft);font-variant-numeric:lining-nums}
+.chapter-title{
+  font-size:clamp(38px,13vw,116px);
+  line-height:.9;letter-spacing:.02em;text-transform:uppercase;font-weight:700;
+}
+.folio{
+  position:absolute;bottom:16px;right:var(--mar);
+  font-size:10px;color:var(--ink-soft);letter-spacing:.05em;
+}
+.prose{font-size:clamp(15px,4.1vw,18px);line-height:1.75;max-width:36em}
+.prose + .prose{margin-top:1em}
+.small{font-size:13px;line-height:1.7;color:var(--ink-soft)}
+
+/* ---------- language toggle ---------- */
+.lang-toggle{
+  position:fixed;top:14px;right:var(--mar);z-index:50;
+  display:flex;align-items:center;gap:7px;
+  padding:6px 11px;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  background:rgba(255,255,255,.34);border:1px solid rgba(255,255,255,.28);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.lang-toggle button{
+  font-family:inherit;font-size:inherit;letter-spacing:inherit;text-transform:inherit;
+  background:none;border:0;padding:0;cursor:pointer;color:var(--ink-soft);
+}
+.lang-toggle button[aria-pressed="true"]{color:var(--ink);font-weight:700}
+.lang-toggle .sep{color:var(--rule)}
+
+/* ---------- cover ---------- */
+.cover{position:relative;height:100svh;min-height:560px;width:100%;overflow:hidden;background:#0d1116}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+.cover::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.34) 0%,rgba(0,0,0,.06) 34%,rgba(0,0,0,0) 60%);
+}
+.cover-type{
+  position:absolute;top:0;left:0;right:0;z-index:2;
+  padding:calc(var(--mar) + 30px) var(--mar) 0;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  color:#fff;
+}
+.cover-type h1{
+  font-size:clamp(34px,10.5vw,92px);line-height:.94;
+  font-weight:700;letter-spacing:.01em;text-transform:uppercase;
+}
+.cover-type h1 .amp{display:block;font-style:italic;font-weight:400;text-transform:none}
+.cover-type h1 .invite{display:block;font-size:.26em;font-style:italic;font-weight:400;text-transform:none;letter-spacing:.02em;margin-top:10px}
+.cover-meta{text-align:right;font-size:clamp(11px,3vw,14px);line-height:1.5;letter-spacing:.04em;white-space:nowrap}
+.cover-foot{
+  position:absolute;left:var(--mar);right:var(--mar);bottom:26px;z-index:2;color:#fff;
+  display:flex;justify-content:space-between;align-items:flex-end;gap:12px;
+}
+.cover-foot .label{color:rgba(255,255,255,.82)}
+.scroll-cue{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82)}
+.scroll-cue span{display:block;text-align:center;margin-top:6px;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(5px);opacity:1}}
+
+/* ---------- contents ---------- */
+.contents{padding:64px var(--mar) 56px;position:relative}
+.contents-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:52px}
+.contents-head h2{font-size:clamp(30px,9vw,64px);line-height:.95;text-transform:uppercase;font-weight:700}
+.toc{list-style:none;display:grid;gap:30px}
+.toc a{
+  display:grid;grid-template-columns:2.2em 1fr;align-items:baseline;gap:10px;
+  text-decoration:none;color:var(--ink);
+}
+.toc .num{font-size:11px;color:var(--ink-soft)}
+.toc .nm{font-size:clamp(20px,6vw,28px);text-transform:uppercase;letter-spacing:.03em;line-height:1.1}
+.toc .sub{display:block;font-size:11px;letter-spacing:.06em;color:var(--ink-soft);text-transform:none;margin-top:5px}
+.toc a:hover .nm{font-style:italic}
+
+/* ---------- chapter openers ---------- */
+.opener{position:relative;height:92svh;min-height:520px;overflow:hidden;background:#111}
+.opener img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.opener::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,0) 45%)}
+.opener-type{position:absolute;top:0;left:0;z-index:2;padding:calc(var(--mar) + 6px) var(--mar) 0;color:#fff}
+.opener-type .date{color:rgba(255,255,255,.85);display:block;margin-bottom:4px}
+
+.opener-plain{
+  position:relative;min-height:64svh;display:flex;flex-direction:column;justify-content:center;
+  padding:80px var(--mar);border-top:1px solid var(--rule);
+}
+.opener-plain .date{display:block;margin-bottom:6px}
+
+/* ---------- text blocks ---------- */
+section{position:relative}
+.block{padding:56px var(--mar)}
+.block-tight{padding:36px var(--mar)}
+.rule{height:1px;background:var(--rule);margin:0 var(--mar)}
+
+/* photo figures */
+figure{margin:40px 0}
+figure.bleed{margin-left:calc(var(--mar) * -1);margin-right:calc(var(--mar) * -1)}
+figure.half{max-width:62%}
+figure.half-r{max-width:62%;margin-left:auto}
+figcaption{margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ---------- programme ---------- */
+.schedule{list-style:none;margin-top:8px;border-top:1px solid var(--rule)}
+.schedule li{padding:22px 0;border-bottom:1px solid var(--rule)}
+.schedule .hr{font-size:clamp(22px,7vw,32px);line-height:1;display:block}
+.schedule .ev{font-size:clamp(16px,4.6vw,20px);text-transform:uppercase;letter-spacing:.05em;margin-top:8px;display:block}
+.schedule .loc{font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.55}
+.schedule a{color:var(--ink-soft);text-underline-offset:3px}
+
+/* ---------- grids ---------- */
+.grid2{display:grid;grid-template-columns:1fr;gap:10px;margin:36px 0}
+.grid2 figure{margin:0}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:0 var(--mar) 8px}
+.gallery img{aspect-ratio:1/1;object-fit:cover}
+.gallery .tall{grid-column:span 2}
+.gallery .tall img{aspect-ratio:4/5}
+
+/* ---------- pull quote ---------- */
+.pull{
+  font-size:clamp(20px,6vw,30px);line-height:1.35;font-style:italic;
+  max-width:22em;margin:8px 0 4px;
+}
+
+/* ---------- henri cards ---------- */
+.henri-cards{display:grid;grid-template-columns:1fr;gap:18px;margin-top:28px}
+.henri-cards a{display:block;text-decoration:none;color:var(--ink)}
+.henri-cards figure{margin:0}
+.henri-cards img{aspect-ratio:210/297;object-fit:cover}
+.henri-cards figcaption{margin-top:10px;display:flex;justify-content:space-between;align-items:baseline;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.henri-cards figcaption .nm{font-size:15px;letter-spacing:.04em;color:var(--ink)}
+
+/* ---------- timeline ---------- */
+.timeline{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px}
+.tl-item{cursor:pointer}
+.tl-item figure{margin:0;position:relative;overflow:hidden}
+.tl-item figure img{aspect-ratio:4/5;object-fit:cover;filter:grayscale(1)}
+.tl-text{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:26px;
+  background:rgba(17,17,17,.85);color:#fff;
+  font-size:clamp(14px,4vw,17px);line-height:1.6;
+  opacity:0;transition:opacity .3s ease;
+}
+.tl-when{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:10px}
+.tl-item.open .tl-text{opacity:1}
+@media (min-width:768px){
+  .henri-cards{grid-template-columns:repeat(3,1fr);gap:24px}
+  .timeline{grid-template-columns:repeat(2,1fr);gap:20px}
+}
+
+footer{padding:64px var(--mar) 72px;text-align:center;border-top:1px solid var(--rule)}
+footer .mark{font-size:clamp(26px,8vw,44px);text-transform:uppercase;letter-spacing:.06em;line-height:1.1}
+footer .mark .amp{font-style:italic;text-transform:none}
+footer .date{margin-top:14px;display:block}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .scroll-cue span{animation:none}
+}
+
+/* ---------- desktop ---------- */
+@media (min-width:768px){
+  :root{--mar:56px}
+  body{font-size:17px}
+  .block{padding:96px var(--mar)}
+  .contents{padding:104px var(--mar) 96px}
+  .toc{grid-template-columns:1fr 1fr;gap:44px 56px}
+  .grid2{grid-template-columns:1fr 1fr;gap:16px}
+  .gallery{grid-template-columns:repeat(4,1fr);gap:12px;padding:0 var(--mar) 12px}
+  .gallery .tall{grid-column:span 2;grid-row:span 2}
+  .gallery .tall img{aspect-ratio:1/1}
+  figure.half,figure.half-r{max-width:46%}
+  .cover img{object-position:50% 38%}
+  .schedule li{display:grid;grid-template-columns:8rem 1fr;gap:32px;padding:30px 0;align-items:baseline}
+  .schedule .ev{margin-top:0}
+  .prose{max-width:34em}
+  .layout2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+}
+@media (min-width:1200px){
+  :root{--mar:88px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ SÉLECTEUR DE LANGUE ============ -->
+<div class="lang-toggle">
+  <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+  <span class="sep" aria-hidden="true">/</span>
+  <button type="button" data-lang="en" aria-pressed="false">EN</button>
+</div>
+
+<!-- ============ COUVERTURE ============ -->
+<header class="cover">
+  <img src="images/mariage-mains.jpg" alt="Nos mains, alliances, jour de notre mariage à Tokyo">
+  <div class="cover-type">
+    <h1>Serge<span class="amp">&amp;</span>Ayano<span class="invite" data-en="invite you">vous invitent</span></h1>
+    <div class="cover-meta">16.08.2026<br>Eus, France</div>
+  </div>
+  <div class="cover-foot">
+    <div class="label" data-en="Our wedding celebration">Notre fête de mariage</div>
+    <a href="#sommaire" class="scroll-cue" style="text-decoration:none"><span data-en="Contents">Sommaire</span><span>↓</span></a>
+  </div>
+</header>
+
+<!-- ============ SOMMAIRE ============ -->
+<section id="sommaire" class="contents">
+  <div class="contents-head rv">
+    <h2 data-en="Contents">Sommaire</h2>
+    <div class="date" data-en="Sunday<br>16 August 2026">Dimanche<br>16 août 2026</div>
+  </div>
+  <ul class="toc rv">
+    <li><a href="#eus"><span class="num">01</span><span class="nm" data-en="Programme">Programme</span></a></li>
+    <li><a href="#henri"><span class="num">02</span><span class="nm" data-en="Exhibition">Exposition</span></a></li>
+    <li><a href="#tokyo"><span class="num">03</span><span class="nm" data-en="Our story">Notre histoire</span></a></li>
+  </ul>
+  <div class="folio">1</div>
+</section>
+
+<!-- ============ 01 · PROGRAMME (EUS) ============ -->
+<section id="eus">
+  <div class="opener-plain">
+    <h2 class="chapter-title rv" data-en="Programme">Programme</h2>
+
+    <div class="rv" style="margin-top:26px">
+      <p class="pull" style="margin-top:0" data-en="You are invited to celebrate this marriage.">Vous êtes invités à célébrer ce mariage.</p>
+      <p class="prose" style="margin-top:18px" data-en="On 16 August 2026 in Eus, the ceremony will be held on the terrace of our house, followed by a dinner to celebrate our marriage. It will also be a chance to bring the Garrigue family together, and to meet little Henri for the first time. We can't wait to see you.">Le 16 août 2026 à Eus, la cérémonie se tiendra sur la terrasse de notre maison, suivie d'un dîner pour fêter notre mariage. Ce sera l'occasion de réunir la famille Garrigue, et de découvrir le petit Henri pour la première fois. Nous avons hâte de vous voir.</p>
+    </div>
+  </div>
+
+  <figure class="bleed rv">
+    <img src="images/mariage-nous.jpg" alt="Serge et Ayano, jour de leur mariage à Tokyo">
+  </figure>
+
+  <div class="block-tight">
+    <p class="label rv" data-en="01 · The programme">01 · Le programme</p>
+    <ul class="schedule rv">
+      <li>
+        <span class="hr" data-en="4pm">16h</span>
+        <div>
+          <span class="ev">Pre-reception</span>
+          <div class="loc" data-en="Photo exhibition · La Galerie de la Font — our house<br>2 Carrer de la Font, 66500 Eus<br><a href=&quot;https://maps.google.com/?q=2+Carrer+de+la+Font,+66500+Eus,+France&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>View on map</a>">
+            Exposition photo · La Galerie de la Font — notre maison<br>
+            2 Carrer de la Font, 66500 Eus<br>
+            <a href="https://maps.google.com/?q=2+Carrer+de+la+Font,+66500+Eus,+France" target="_blank" rel="noopener">Voir sur la carte</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <span class="hr" data-en="6pm">18h</span>
+        <div>
+          <span class="ev" data-en="Ceremony">Cérémonie</span>
+          <div class="loc" data-en="At the house<br>2 Carrer de la Font, 66500 Eus">
+            À la maison<br>
+            2 Carrer de la Font, 66500 Eus
+          </div>
+        </div>
+      </li>
+      <li>
+        <span class="hr" data-en="7pm">19h</span>
+        <div>
+          <span class="ev" data-en="Dinner">Dîner</span>
+          <div class="loc" data-en="Un Xic de Tot<br>8 Carrer del Canigó, 66500 Eus<br><a href=&quot;https://maps.google.com/?q=8+Carrer+del+Canigo,+66500+Eus,+France&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>View on map</a>">
+            Un Xic de Tot<br>
+            8 Carrer del Canigó, 66500 Eus<br>
+            <a href="https://maps.google.com/?q=8+Carrer+del+Canigo,+66500+Eus,+France" target="_blank" rel="noopener">Voir sur la carte</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="block-tight" id="tenue" style="padding-bottom:96px">
+    <div class="layout2">
+      <div>
+        <p class="label rv" data-en="Dress code">Tenue</p>
+      </div>
+      <div>
+        <p class="pull rv" style="margin-top:0" data-en="Festive dress, in light and bright colours.">Une tenue de fête, dans des couleurs claires et lumineuses.</p>
+        <p class="prose rv" data-en="We would love to see you in bright or pastel colours rather than dark tones. August is scorching in Eus, and the village streets are cobbled and steep: above all, choose comfort.">Nous serions ravis de vous voir en couleurs vives ou pastel plutôt qu'en tons sombres. Le mois d'août est caniculaire à Eus, et les ruelles du village sont pavées et en pente : privilégiez surtout le confort.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · EXPOSITION (HENRI + ALBUM) ============ -->
+<section id="henri">
+  <div class="opener">
+    <img src="images/p12.jpg" alt="Henri devant son gâteau d'anniversaire" loading="lazy">
+    <div class="opener-type">
+      <h2 class="chapter-title" data-en="Exhibition">Exposition</h2>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="layout2">
+      <div>
+        <p class="label rv" data-en="02 · Exhibition">02 · Exposition</p>
+        <p class="pull rv" data-en="A year in Japan, hung on the walls of a Catalan house.">Une année au Japon, accrochée aux murs d'une maison catalane.</p>
+      </div>
+      <div>
+        <p class="prose rv" data-en="The exhibition takes place in a corner of the Pre-reception, at La Galerie de la Font.">L'exposition prend place dans un coin de la Pre-reception, à la Galerie de la Font.</p>
+        <p class="prose rv" data-en="Since Henri was born, we have been photographing our everyday life in Japan. These images, gathered in an album we simply called <em>Henri</em>, tell the story of a first year in Tokyo.">Depuis la naissance d'Henri, nous photographions notre vie quotidienne au Japon. Ces images, réunies dans un album que nous avons appelé simplement <em>Henri</em>, racontent une première année à Tokyo.</p>
+        <p class="prose rv" data-en="We are showing them for the first time at La Galerie de la Font, in our house in Eus, on the very day Henri discovers France. The Pre-reception opens the day at 4pm — a drink, the photographs, and time together before the ceremony.">Nous les exposons pour la première fois à la Galerie de la Font, dans notre maison à Eus, le jour même où Henri découvre la France. La Pre-reception ouvre la journée à 16h — un verre, les photographies, et le temps de se retrouver avant la cérémonie.</p>
+      </div>
+    </div>
+
+    <div class="henri-cards rv" style="margin-top:48px">
+      <a href="pdfs/henri1.pdf" target="_blank" rel="noopener">
+        <figure><img src="images/henri1-cover.jpg" alt="Couverture de l'album Henri 1" loading="lazy"></figure>
+        <figcaption><span class="nm">Henri 1</span><span>PDF ↗</span></figcaption>
+      </a>
+      <a href="pdfs/henri2.pdf" target="_blank" rel="noopener">
+        <figure><img src="images/henri2-cover.jpg" alt="Couverture de l'album Henri 2" loading="lazy"></figure>
+        <figcaption><span class="nm">Henri 2</span><span>PDF ↗</span></figcaption>
+      </a>
+      <a href="pdfs/henri3.pdf" target="_blank" rel="noopener">
+        <figure><img src="images/henri3-cover.jpg" alt="Couverture de l'album Henri 3" loading="lazy"></figure>
+        <figcaption><span class="nm">Henri 3</span><span>PDF ↗</span></figcaption>
+      </a>
+    </div>
+  </div>
+  <div class="rule"></div>
+</section>
+
+<!-- ============ 03 · NOTRE HISTOIRE (TOKYO) ============ -->
+<section id="tokyo">
+  <div class="opener">
+    <img src="images/p21.jpg" alt="Notre famille pendant un festival à Kyoto" loading="lazy" style="filter:grayscale(1)">
+    <div class="opener-type">
+      <h2 class="chapter-title" data-en="Our story">Notre histoire</h2>
+    </div>
+  </div>
+
+  <div class="block">
+    <p class="label rv" data-en="03 · Our story">03 · Notre histoire</p>
+    <p class="prose rv" style="margin-top:14px" data-en="We met in Kyoto in 2020. For six years we have lived together in Japan, between Kyoto and Tokyo. We would be happy to see our family again in France.">Nous nous sommes rencontrés à Kyoto en 2020. Depuis six ans, nous avons vécu ensemble au Japon, entre Kyoto et Tokyo. Nous serions heureux de retrouver notre famille en France.</p>
+
+    <div class="timeline rv">
+      <div class="tl-item">
+        <figure>
+          <img src="images/histoire-osaka-1997.jpg" alt="Ayano bébé, Osaka" loading="lazy">
+          <div class="tl-text" data-en="<span class=&quot;tl-when&quot;>Osaka · August 1997</span>Ayano was born in Chihaya Akasaka, a village in the mountains south of Osaka."><span class="tl-when">Osaka · Août 1997</span>Ayano est née à Chihaya Akasaka, un village dans la montagne, au sud d'Osaka.</div>
+        </figure>
+      </div>
+      <div class="tl-item">
+        <figure>
+          <img src="images/histoire-kyoto-1998.jpg" alt="Serge bébé, Kyoto" loading="lazy">
+          <div class="tl-text" data-en="<span class=&quot;tl-when&quot;>Kyoto · July 1998</span>Serge was born in Nakagyō-ku, in the centre of Kyoto, the historic capital of Japan."><span class="tl-when">Kyoto · Juillet 1998</span>Serge est né à Nakagyō-ku, au centre de Kyoto, l'ancienne capitale du Japon.</div>
+        </figure>
+      </div>
+      <div class="tl-item">
+        <figure>
+          <img src="images/histoire-kyoto-2020.jpg" alt="Serge et Ayano à la plage, Kyoto" loading="lazy">
+          <div class="tl-text" data-en="<span class=&quot;tl-when&quot;>Kyoto · May 2020</span>We met in Kyoto, in the spring of 2020. Since then we have travelled to many places together."><span class="tl-when">Kyoto · Mai 2020</span>Nous nous sommes rencontrés à Kyoto, au printemps 2020. Depuis, nous avons voyagé dans beaucoup d'endroits ensemble.</div>
+        </figure>
+      </div>
+      <div class="tl-item">
+        <figure>
+          <img src="images/histoire-france-2023.jpg" alt="Ayano sur une plage en France" loading="lazy">
+          <div class="tl-text" data-en="<span class=&quot;tl-when&quot;>France · August 2023</span>Our first trip to France together. Ayano discovered one of Serge's home countries."><span class="tl-when">France · Août 2023</span>Notre premier voyage en France ensemble. Ayano a découvert l'un des pays d'origine de Serge.</div>
+        </figure>
+      </div>
+      <div class="tl-item">
+        <figure>
+          <img src="images/histoire-tokyo-2024a.jpg" alt="Un Shinkansen traverse Tokyo" loading="lazy">
+          <div class="tl-text" data-en="<span class=&quot;tl-when&quot;>Tokyo · March 2024</span>Serge and Ayano both found work in Tokyo. We left Kyoto and settled in Suginami."><span class="tl-when">Tokyo · Mars 2024</span>Serge et Ayano ont tous les deux trouvé un travail à Tokyo. Nous avons quitté Kyoto et nous nous sommes installés à Suginami.</div>
+        </figure>
+      </div>
+      <div class="tl-item">
+        <figure>
+          <img src="images/histoire-tokyo-2024b.jpg" alt="Serge et Ayano, jour de leur mariage à Tokyo" loading="lazy">
+          <div class="tl-text" data-en="<span class=&quot;tl-when&quot;>Tokyo · July 2024</span>We married in Tokyo, just the two of us."><span class="tl-when">Tokyo · Juillet 2024</span>Nous nous sommes mariés à Tokyo, tous les deux.</div>
+        </figure>
+      </div>
+      <div class="tl-item">
+        <figure>
+          <img src="images/histoire-kyoto-2025.jpg" alt="Henri nouveau-né avec Serge et Ayano" loading="lazy">
+          <div class="tl-text" data-en="<span class=&quot;tl-when&quot;>Kyoto · June 2025</span>Henri was born in Kyoto. He spent his first year in Japan."><span class="tl-when">Kyoto · Juin 2025</span>Henri est né à Kyoto. Il a passé sa première année au Japon.</div>
+        </figure>
+      </div>
+      <div class="tl-item">
+        <figure>
+          <img src="images/histoire-eus-2026.jpg" alt="Serge, Ayano et Henri à Tokyo" loading="lazy">
+          <div class="tl-text" data-en="<span class=&quot;tl-when&quot;>Eus · August 2026</span>We return to France with Henri, and finally celebrate our marriage with you, in Eus."><span class="tl-when">Eus · Août 2026</span>Nous rentrons en France avec Henri, et nous célébrons enfin notre mariage avec vous, à Eus.</div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="mark">Serge <span class="amp">&amp;</span> Ayano</div>
+  <span class="date" data-en="Eus · 16 August 2026">Eus · 16 août 2026</span>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('in')});
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.06});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+(function(){
+  document.querySelectorAll('.tl-item').forEach(function(item){
+    item.addEventListener('click', function(){ item.classList.toggle('open'); });
+  });
+})();
+
+/* ---------- langue : FR par défaut, EN via le sélecteur ou ?lang=en ---------- */
+(function(){
+  var nodes = document.querySelectorAll('[data-en]');
+  nodes.forEach(function(n){ n.setAttribute('data-fr', n.innerHTML); });
+
+  var meta = {
+    fr:{
+      title:'Serge & Ayano vous invitent — Eus, 16 août 2026',
+      desc:'Serge et Ayano vous invitent à célébrer leur mariage le dimanche 16 août 2026 à Eus, Pyrénées-Orientales.',
+      ogTitle:'Serge & Ayano — 16 août 2026',
+      ogDesc:'Une fête à Eus, Pyrénées-Orientales. Dimanche 16 août 2026.'
+    },
+    en:{
+      title:'Serge & Ayano invite you — Eus, 16 August 2026',
+      desc:'Serge and Ayano invite you to celebrate their marriage on Sunday 16 August 2026 in Eus, southern France.',
+      ogTitle:'Serge & Ayano — 16 August 2026',
+      ogDesc:'A celebration in Eus, southern France. Sunday 16 August 2026.'
+    }
+  };
+
+  var buttons = document.querySelectorAll('.lang-toggle button');
+
+  function setMeta(name, value, isProperty){
+    var el = document.querySelector((isProperty ? 'meta[property="' : 'meta[name="') + name + '"]');
+    if(el) el.setAttribute('content', value);
+  }
+
+  function setLang(lang){
+    nodes.forEach(function(n){
+      var v = n.getAttribute('data-' + lang);
+      if(v !== null) n.innerHTML = v;
+    });
+    document.documentElement.lang = lang;
+    document.title = meta[lang].title;
+    setMeta('description', meta[lang].desc, false);
+    setMeta('og:title', meta[lang].ogTitle, true);
+    setMeta('og:description', meta[lang].ogDesc, true);
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+  }
+
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var lang = b.getAttribute('data-lang');
+      setLang(lang);
+      // garde le lien partageable : ?lang=en
+      var url = new URL(window.location.href);
+      if(lang === 'en'){ url.searchParams.set('lang','en'); }
+      else { url.searchParams.delete('lang'); }
+      history.replaceState(null, '', url);
+    });
+  });
+
+  var initial = new URLSearchParams(window.location.search).get('lang');
+  if(initial === 'en') setLang('en');
+})();
+</script>
+</body>
+</html>
