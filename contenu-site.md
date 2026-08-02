@@ -132,12 +132,12 @@ Tout est au passé composé, sauf la dernière étape (août 2026) qui n'a pas
 encore eu lieu et reste au présent.
 
 0. **Osaka · Août 1997** — Ayano est née à Chihaya Akasaka, un village dans la montagne, au sud d'Osaka.
-0. **Kyoto · Juillet 1998** — Serge est né à Nakagyō-ku, au centre de Kyoto, l'ancienne capitale du Japon.
+0. **Kyoto · Juillet 1998** — Serge est né à Nakagyō-ku, au centre de Kyoto.
 1. **Kyoto · Mai 2020** — Nous nous sommes rencontrés à Kyoto, au printemps 2020. Depuis, nous avons voyagé dans beaucoup d'endroits ensemble.
-2. **France · Août 2023** — Notre premier voyage en France ensemble. Ayano a découvert l'un des pays d'origine de Serge.
+2. **France · Août 2023** — Notre premier voyage en France ensemble. Ayano a découvert l'autre pays d'origine de Serge.
 3. **Tokyo · Mars 2024** — Serge et Ayano ont tous les deux trouvé un travail à Tokyo. Nous avons quitté Kyoto et nous nous sommes installés à Suginami.
 4. **Tokyo · Juillet 2024** — Nous nous sommes mariés à Tokyo, tous les deux.
-5. **Kyoto · Juin 2025** — Henri est né à Kyoto. Il a passé sa première année au Japon.
+5. **Kyoto · Juin 2025** — Henri est né à Kyoto. Peu après, il est venu vivre avec nous à Tokyo.
 6. **Eus · Août 2026** — Nous rentrons en France avec Henri, et nous célébrons enfin notre mariage avec vous, à Eus.
 
 Photos : `notre histoire/osaka aout 1997.jpg`, `kyoto juillet 1998.jpg`,
