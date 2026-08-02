@@ -95,6 +95,8 @@ le contexte personnel à la fin :
 2. **Exposition** — Henri + Album fusionnés : texte, puis cartes PDF Henri 1/2/3 (`#henri`)
 3. **Notre histoire** — frise photo à tap-to-reveal, 8 étapes chronologiques (`#tokyo`).
    Toutes les photos de la section sont en noir et blanc (`filter:grayscale(1)`).
+4. **Photos** — album Google Photos partagé pour que les invités déposent leurs
+   photos de la journée (`#photos`), lien externe en `target="_blank" rel="noopener"`.
 
 Pas de sous-titre/kicker : seul le grand titre reste sur chaque section et dans le sommaire.
 

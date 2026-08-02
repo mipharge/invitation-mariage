@@ -164,6 +164,15 @@ figcaption{margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:upp
 .henri-cards figcaption{margin-top:10px;display:flex;justify-content:space-between;align-items:baseline;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
 .henri-cards figcaption .nm{font-size:15px;letter-spacing:.04em;color:var(--ink)}
 
+/* ---------- lien album partagé ---------- */
+.album-link{
+  display:inline-block;margin-top:26px;padding:14px 28px;
+  border:1px solid var(--ink);color:var(--ink);text-decoration:none;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  transition:background .25s ease,color .25s ease;
+}
+.album-link:hover{background:var(--ink);color:var(--paper)}
+
 /* ---------- timeline ---------- */
 .timeline{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px}
 .tl-item{cursor:pointer}
@@ -251,6 +260,7 @@ footer .date{margin-top:14px;display:block}
     <li><a href="#eus"><span class="num">01</span><span class="nm" data-en="Programme">Programme</span></a></li>
     <li><a href="#henri"><span class="num">02</span><span class="nm" data-en="Exhibition">Exposition</span></a></li>
     <li><a href="#tokyo"><span class="num">03</span><span class="nm" data-en="Our story">Notre histoire</span></a></li>
+    <li><a href="#photos"><span class="num">04</span><span class="nm" data-en="Photos">Photos</span></a></li>
   </ul>
   <div class="folio">1</div>
 </section>
@@ -422,6 +432,24 @@ footer .date{margin-top:14px;display:block}
           <img src="images/histoire-eus-2026.jpg" alt="Serge, Ayano et Henri à Tokyo" loading="lazy">
           <div class="tl-text" data-en="<span class=&quot;tl-when&quot;>Eus · August 2026</span>We return to France with Henri, and finally celebrate our marriage with you, in Eus."><span class="tl-when">Eus · Août 2026</span>Nous rentrons en France avec Henri, et nous célébrons enfin notre mariage avec vous, à Eus.</div>
         </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · PHOTOS ============ -->
+<section id="photos">
+  <div class="rule"></div>
+  <div class="block">
+    <p class="label rv" data-en="04 · Photos">04 · Photos</p>
+    <h2 class="chapter-title rv" style="font-size:clamp(32px,10vw,80px);margin:10px 0 20px" data-en="Photos">Photos</h2>
+    <div class="layout2">
+      <div>
+        <p class="pull rv" style="margin-top:0" data-en="Share your photos from the day.">Partagez vos photos de la journée.</p>
+      </div>
+      <div>
+        <p class="prose rv" data-en="We have created a shared album to gather everyone's photos of 16 August in one place. Add yours during or after the day, and have a look at everyone else's.">Nous avons créé un album partagé pour rassembler au même endroit les photos du 16 août. Ajoutez les vôtres pendant ou après la journée, et venez voir celles des autres.</p>
+        <a class="album-link rv" href="https://photos.app.goo.gl/TY5worfLbMvZA8ry5" target="_blank" rel="noopener" data-en="Open the shared album">Ouvrir l'album partagé</a>
       </div>
     </div>
   </div>

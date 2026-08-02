@@ -10,12 +10,13 @@ partageable). Pas de stockage local — le choix ne persiste pas d'une visite à
 l'autre, seulement via l'URL.
 
 Ordre du site : l'invitation et les infos pratiques (Programme) d'abord,
-le contexte personnel (notre histoire) à la fin. Pas de section contact
-(tous les invités sont de la famille et ont déjà nos coordonnées).
+le contexte personnel (notre histoire) ensuite, puis l'album partagé à la
+fin. Pas de section contact (tous les invités sont de la famille et ont
+déjà nos coordonnées).
 
 Aucune section n'a de sous-titre/kicker (retiré de partout, y compris du
 sommaire) : seul le grand titre (« Programme », « Exposition »,
-« Notre histoire ») reste.
+« Notre histoire », « Photos ») reste.
 
 ---
 
@@ -147,6 +148,25 @@ Photos : `notre histoire/osaka aout 1997.jpg`, `kyoto juillet 1998.jpg`,
 Toutes les photos de la section (l'ouverture de chapitre comprise) sont
 affichées en noir et blanc, via `filter:grayscale(1)` en CSS — les fichiers
 sources restent en couleur.
+
+---
+
+## 5. Photos (album partagé)
+
+*Titre du chapitre : « Photos ». Pas de sous-titre. Dernière section, juste
+avant le pied de page.*
+
+> Partagez vos photos de la journée.
+
+Nous avons créé un album partagé pour rassembler au même endroit les photos
+du 16 août. Ajoutez les vôtres pendant ou après la journée, et venez voir
+celles des autres.
+
+Bouton : **Ouvrir l'album partagé** → https://photos.app.goo.gl/TY5worfLbMvZA8ry5
+(`target="_blank" rel="noopener"`, style `.album-link`).
+
+*Le lien est public, comme le reste du site : toute personne qui trouve le
+site peut ouvrir l'album.*
 
 ---
 
