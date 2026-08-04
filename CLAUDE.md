@@ -34,7 +34,7 @@ de photos de l'album familial *Henri* — la vie du couple au Japon depuis la na
 de leur fils. Première exposition de ces images, le jour où Henri arrive en France.
 Ce n'est pas un événement à part : elle a lieu à l'intérieur de la Pre-reception.
 
-Le site présente aussi trois cartes **Henri 1 / Henri 2 / Henri 3**, qui ouvrent chacune
+Le site présente aussi quatre cartes **Henri 1 / Henri 2 / Henri 3 / Henri 4**, qui ouvrent chacune
 un PDF (l'album complet de chaque édition) dans un nouvel onglet.
 
 Référence de style du site : `HENRI 3 Best.pdf` (82 pages, album Pages/A4) — *non versionné, 406 Mo*.
@@ -75,7 +75,6 @@ Reprise de l'album *HENRI* : mise en page éditoriale, papier blanc, encre noire
 - **Ouvertures de chapitre** : soit photo plein écran avec titre blanc superposé,
   soit page blanche avec titre noir (variante `.opener-plain`).
 - **Beaucoup de blanc.** Photos parfois à 46–62 % de largeur, jamais toutes pleine page.
-- Numéros de page discrets en bas à droite (`.folio`).
 - Apparition en fondu au scroll via IntersectionObserver (classe `.rv` → `.in`).
 - Respecte `prefers-reduced-motion`.
 
@@ -85,14 +84,14 @@ Reprise de l'album *HENRI* : mise en page éditoriale, papier blanc, encre noire
 site/
 ├── index.html        # tout : HTML + CSS + JS dans un seul fichier
 ├── images/           # photos optimisées (max 2000 px, qualité 82)
-└── pdfs/              # henri1.pdf, henri2.pdf, henri3.pdf
+└── pdfs/              # henri1.pdf … henri4.pdf
 ```
 
 Chapitres, dans l'ordre — l'invitation et les infos pratiques d'abord,
 le contexte personnel à la fin :
 
 1. **Programme** — Eus : lettre d'invitation, horaires, tenue (`#eus`, la tenue est une sous-section)
-2. **Exposition** — Henri + Album fusionnés : texte, puis cartes PDF Henri 1/2/3 (`#henri`)
+2. **Exposition** — Henri + Album fusionnés : texte, puis cartes PDF Henri 1/2/3/4 (`#henri`)
 3. **Notre histoire** — frise photo à tap-to-reveal, 8 étapes chronologiques (`#tokyo`).
    Toutes les photos de la section sont en noir et blanc (`filter:grayscale(1)`).
 4. **Photos** — album Google Photos partagé pour que les invités déposent leurs
@@ -108,8 +107,8 @@ Précédés de la couverture et d'un sommaire (`#sommaire`) inspiré de la page 
 - `contenu-site.md` — tous les textes, validés par Serge
 - `site/index.html` — le site
 - `site/images/` — photos optimisées
-- `site/pdfs/` — henri1.pdf, henri2.pdf, henri3.pdf (copiés/renommés depuis `pdfs/HENRI 1.pdf` etc.)
-- `pdfs/` — PDFs originaux (`HENRI 1.pdf`, `HENRI 2.pdf`, `HENRI 3.pdf`) *(non versionné à la racine)*
+- `site/pdfs/` — henri1.pdf … henri4.pdf (copiés/renommés depuis `pdfs/HENRI 1.pdf` etc.)
+- `pdfs/` — PDFs originaux (`HENRI 1.pdf` … `HENRI 4.pdf`) *(non versionné à la racine)*
 - `photos/`, `title/`, `notre histoire/` — photos originales non retouchées *(non versionnées, plusieurs Go)*
 - `HENRI 3 Best.pdf` — l'album, référence de style *(non versionné, 406 Mo)*
 

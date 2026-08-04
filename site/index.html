@@ -38,12 +38,8 @@ img{display:block;width:100%;height:auto}
 }
 .date{font-size:11px;letter-spacing:.06em;color:var(--ink-soft);font-variant-numeric:lining-nums}
 .chapter-title{
-  font-size:clamp(38px,13vw,116px);
+  font-size:clamp(32px,12vw,116px);
   line-height:.9;letter-spacing:.02em;text-transform:uppercase;font-weight:700;
-}
-.folio{
-  position:absolute;bottom:16px;right:var(--mar);
-  font-size:10px;color:var(--ink-soft);letter-spacing:.05em;
 }
 .prose{font-size:clamp(15px,4.1vw,18px);line-height:1.75;max-width:36em}
 .prose + .prose{margin-top:1em}
@@ -56,6 +52,7 @@ img{display:block;width:100%;height:auto}
   padding:6px 11px;
   font-size:10px;letter-spacing:.16em;text-transform:uppercase;
   background:rgba(255,255,255,.34);border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;
   backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
 }
 .lang-toggle button{
@@ -167,11 +164,12 @@ figcaption{margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:upp
 /* ---------- lien album partagé ---------- */
 .album-link{
   display:inline-block;margin-top:26px;padding:14px 28px;
-  border:1px solid var(--ink);color:var(--ink);text-decoration:none;
+  border:1px solid var(--rule);border-radius:999px;
+  color:var(--ink);text-decoration:none;
   font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-  transition:background .25s ease,color .25s ease;
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
 }
-.album-link:hover{background:var(--ink);color:var(--paper)}
+.album-link:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 
 /* ---------- timeline ---------- */
 .timeline{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px}
@@ -187,7 +185,7 @@ figcaption{margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:upp
 .tl-when{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:10px}
 .tl-item.open .tl-text{opacity:1}
 @media (min-width:768px){
-  .henri-cards{grid-template-columns:repeat(3,1fr);gap:24px}
+  .henri-cards{grid-template-columns:repeat(2,1fr);gap:24px}
   .timeline{grid-template-columns:repeat(2,1fr);gap:20px}
 }
 
@@ -225,6 +223,7 @@ footer .date{margin-top:14px;display:block}
 }
 @media (min-width:1200px){
   :root{--mar:88px}
+  .henri-cards{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
@@ -262,7 +261,6 @@ footer .date{margin-top:14px;display:block}
     <li><a href="#tokyo"><span class="num">03</span><span class="nm" data-en="Our story">Notre histoire</span></a></li>
     <li><a href="#photos"><span class="num">04</span><span class="nm" data-en="Photos">Photos</span></a></li>
   </ul>
-  <div class="folio">1</div>
 </section>
 
 <!-- ============ 01 · PROGRAMME (EUS) ============ -->
@@ -320,9 +318,7 @@ footer .date{margin-top:14px;display:block}
 
   <div class="block-tight" id="tenue" style="padding-bottom:96px">
     <div class="layout2">
-      <div>
-        <p class="label rv" data-en="Dress code">Tenue</p>
-      </div>
+      <div></div>
       <div>
         <p class="pull rv" style="margin-top:0" data-en="Festive dress, in light and bright colours.">Une tenue de fête, dans des couleurs claires et lumineuses.</p>
         <p class="prose rv" data-en="We would love to see you in bright or pastel colours rather than dark tones. August is scorching in Eus, and the village streets are cobbled and steep: above all, choose comfort.">Nous serions ravis de vous voir en couleurs vives ou pastel plutôt qu'en tons sombres. Le mois d'août est caniculaire à Eus, et les ruelles du village sont pavées et en pente : privilégiez surtout le confort.</p>
@@ -347,7 +343,6 @@ footer .date{margin-top:14px;display:block}
         <p class="pull rv" data-en="A year in Japan, hung on the walls of a Catalan house.">Une année au Japon, accrochée aux murs d'une maison catalane.</p>
       </div>
       <div>
-        <p class="prose rv" data-en="The exhibition takes place in a corner of the Pre-reception, at La Galerie de la Font.">L'exposition prend place dans un coin de la Pre-reception, à la Galerie de la Font.</p>
         <p class="prose rv" data-en="Since Henri was born, we have been photographing our everyday life in Japan. These images, gathered in an album we simply called <em>Henri</em>, tell the story of a first year in Tokyo.">Depuis la naissance d'Henri, nous photographions notre vie quotidienne au Japon. Ces images, réunies dans un album que nous avons appelé simplement <em>Henri</em>, racontent une première année à Tokyo.</p>
         <p class="prose rv" data-en="We are showing them for the first time at La Galerie de la Font, in our house in Eus, on the very day Henri discovers France. The Pre-reception opens the day at 4pm — a drink, the photographs, and time together before the ceremony.">Nous les exposons pour la première fois à la Galerie de la Font, dans notre maison à Eus, le jour même où Henri découvre la France. La Pre-reception ouvre la journée à 16h — un verre, les photographies, et le temps de se retrouver avant la cérémonie.</p>
       </div>
@@ -365,6 +360,10 @@ footer .date{margin-top:14px;display:block}
       <a href="pdfs/henri3.pdf" target="_blank" rel="noopener">
         <figure><img src="images/henri3-cover.jpg" alt="Couverture de l'album Henri 3" loading="lazy"></figure>
         <figcaption><span class="nm">Henri 3</span><span>PDF ↗</span></figcaption>
+      </a>
+      <a href="pdfs/henri4.pdf" target="_blank" rel="noopener">
+        <figure><img src="images/henri4-cover.jpg" alt="Couverture de l'album Henri 4" loading="lazy"></figure>
+        <figcaption><span class="nm">Henri 4</span><span>PDF ↗</span></figcaption>
       </a>
     </div>
   </div>
@@ -441,8 +440,7 @@ footer .date{margin-top:14px;display:block}
 <section id="photos">
   <div class="rule"></div>
   <div class="block">
-    <p class="label rv" data-en="04 · Photos">04 · Photos</p>
-    <h2 class="chapter-title rv" style="font-size:clamp(32px,10vw,80px);margin:10px 0 20px" data-en="Photos">Photos</h2>
+    <h2 class="chapter-title rv" style="font-size:clamp(32px,10vw,80px);margin:0 0 20px" data-en="Photos">Photos</h2>
     <div class="layout2">
       <div>
         <p class="pull rv" style="margin-top:0" data-en="Share your photos from the day.">Partagez vos photos de la journée.</p>
@@ -508,7 +506,7 @@ footer .date{margin-top:14px;display:block}
     if(el) el.setAttribute('content', value);
   }
 
-  function setLang(lang){
+  function applyLang(lang){
     nodes.forEach(function(n){
       var v = n.getAttribute('data-' + lang);
       if(v !== null) n.innerHTML = v;
@@ -523,10 +521,13 @@ footer .date{margin-top:14px;display:block}
     });
   }
 
+  var root = document.documentElement;
+
   buttons.forEach(function(b){
     b.addEventListener('click', function(){
       var lang = b.getAttribute('data-lang');
-      setLang(lang);
+      if(lang === root.lang) return;
+      applyLang(lang);
       // garde le lien partageable : ?lang=en
       var url = new URL(window.location.href);
       if(lang === 'en'){ url.searchParams.set('lang','en'); }
@@ -536,7 +537,7 @@ footer .date{margin-top:14px;display:block}
   });
 
   var initial = new URLSearchParams(window.location.search).get('lang');
-  if(initial === 'en') setLang('en');
+  if(initial === 'en') applyLang('en');
 })();
 </script>
 </body>

@@ -64,7 +64,7 @@ Ne jamais écrire « vernissage » (l'exposition ne dure qu'un jour, le terme ne
 convient pas) — toujours « Pre-reception », jamais « reception » seul, pour
 que sa place dans la journée (avant cérémonie et dîner) reste claire.
 
-### Tenue (sous-section de Programme)
+### Tenue (sous-section de Programme, sans petit titre « Tenue » affiché)
 
 > **Une tenue de fête, dans des couleurs claires et lumineuses.**
 >
@@ -83,9 +83,6 @@ les soirées fraîches en altitude a aussi été retirée.*
 
 > Une année au Japon, accrochée aux murs d'une maison catalane.
 
-L'exposition prend place dans un coin de la Pre-reception, à la Galerie de la
-Font — ce n'est pas un événement à part.
-
 Depuis la naissance d'Henri, nous photographions notre vie au Japon. Ces
 images, réunies dans un album que nous avons appelé simplement *Henri*,
 racontent une première année à Tokyo : les jours ordinaires, la maison, les
@@ -100,11 +97,11 @@ cérémonie.
 la section passe directement du texte aux cartes. La ligne « Une année au
 Japon / Avril — juillet 2026, Japon. » a aussi été retirée.*
 
-Puis trois cartes **Henri 1 / Henri 2 / Henri 3** (remplacent l'ancienne
+Puis quatre cartes **Henri 1 / Henri 2 / Henri 3 / Henri 4** (remplacent l'ancienne
 grille Album) : chaque carte = vignette + libellé, cliquer ouvre le PDF
-correspondant dans un nouvel onglet (`site/pdfs/henri1.pdf` … `henri3.pdf`).
-Pas d'aperçu PDF intégré. Empilées verticalement sur mobile, 3 colonnes à
-partir de 768px. Vignettes = la couverture réelle de chaque PDF (extraite via
+correspondant dans un nouvel onglet (`site/pdfs/henri1.pdf` … `henri4.pdf`).
+Pas d'aperçu PDF intégré. Empilées verticalement sur mobile, 2 colonnes à
+partir de 768px, 4 à partir de 1200px. Vignettes = la couverture réelle de chaque PDF (extraite via
 Quick Look, `sips -Z 1200`, → `site/images/henri1-cover.jpg` etc.).
 
 ---
