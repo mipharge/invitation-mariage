@@ -170,6 +170,8 @@ figcaption{margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:upp
   transition:background .25s ease,color .25s ease,border-color .25s ease;
 }
 .album-link:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.album-link.primary{background:var(--ink);border-color:var(--ink);color:var(--paper);padding:16px 34px;font-size:12px}
+.album-link.primary:hover{background:var(--paper);color:var(--ink)}
 
 /* ---------- timeline ---------- */
 .timeline{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px}
@@ -194,6 +196,11 @@ footer .mark{font-size:clamp(26px,8vw,44px);text-transform:uppercase;letter-spac
 footer .mark .amp{font-style:italic;text-transform:none}
 footer .date{margin-top:14px;display:block}
 
+/* ---------- fondu d'une page à l'autre ---------- */
+@keyframes page-in{from{opacity:0}to{opacity:1}}
+body{animation:page-in .45s ease}
+body.leaving{opacity:0;transition:opacity .3s ease}
+
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease}
 .rv.in{opacity:1;transform:none}
@@ -201,6 +208,8 @@ footer .date{margin-top:14px;display:block}
   .rv{opacity:1;transform:none;transition:none}
   html{scroll-behavior:auto}
   .scroll-cue span{animation:none}
+  body{animation:none}
+  body.leaving{opacity:1;transition:none}
 }
 
 /* ---------- desktop ---------- */
@@ -366,6 +375,8 @@ footer .date{margin-top:14px;display:block}
         <figcaption><span class="nm">Henri 4</span><span>PDF ↗</span></figcaption>
       </a>
     </div>
+
+    <a class="album-link primary rv" href="exposition.html" data-base="exposition.html" data-keep-lang data-page-fade data-en="See the exhibition">Voir l'exposition</a>
   </div>
   <div class="rule"></div>
 </section>
@@ -373,7 +384,7 @@ footer .date{margin-top:14px;display:block}
 <!-- ============ 03 · NOTRE HISTOIRE (TOKYO) ============ -->
 <section id="tokyo">
   <div class="opener">
-    <img src="images/p21.jpg" alt="Notre famille pendant un festival à Kyoto" loading="lazy" style="filter:grayscale(1)">
+    <img src="images/expo/10.jpg" alt="Serge en tenue de Gion Matsuri, Ayano et Henri devant le char du Tourouyama, Kyoto" loading="lazy" style="filter:grayscale(1);object-position:50% 80%">
     <div class="opener-type">
       <h2 class="chapter-title" data-en="Our story">Notre histoire</h2>
     </div>
@@ -479,6 +490,25 @@ footer .date{margin-top:14px;display:block}
   });
 })();
 
+/* ---------- fondu en quittant la page vers l'autre page du site ---------- */
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.addEventListener('click', function(e){
+    if(e.defaultPrevented || e.button !== 0) return;
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[data-page-fade]');
+    if(!a) return;
+    if(reduce.matches) return; // navigation normale
+    e.preventDefault();
+    document.body.classList.add('leaving');
+    setTimeout(function(){ window.location.href = a.href; }, 300);
+  });
+  // retour arrière : la page ressort du cache, on enlève le fondu
+  window.addEventListener('pageshow', function(e){
+    if(e.persisted) document.body.classList.remove('leaving');
+  });
+})();
+
 /* ---------- langue : FR par défaut, EN via le sélecteur ou ?lang=en ---------- */
 (function(){
   var nodes = document.querySelectorAll('[data-en]');
@@ -500,6 +530,7 @@ footer .date{margin-top:14px;display:block}
   };
 
   var buttons = document.querySelectorAll('.lang-toggle button');
+  var keepLang = document.querySelectorAll('a[data-keep-lang]');
 
   function setMeta(name, value, isProperty){
     var el = document.querySelector((isProperty ? 'meta[property="' : 'meta[name="') + name + '"]');
@@ -518,6 +549,11 @@ footer .date{margin-top:14px;display:block}
     setMeta('og:description', meta[lang].ogDesc, true);
     buttons.forEach(function(b){
       b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+    // les liens internes gardent la langue courante
+    keepLang.forEach(function(a){
+      var base = a.getAttribute('data-base');
+      a.setAttribute('href', lang === 'en' ? base + '?lang=en' : base);
     });
   }
 

@@ -37,6 +37,10 @@ Ce n'est pas un événement à part : elle a lieu à l'intérieur de la Pre-rece
 Le site présente aussi quatre cartes **Henri 1 / Henri 2 / Henri 3 / Henri 4**, qui ouvrent chacune
 un PDF (l'album complet de chaque édition) dans un nouvel onglet.
 
+Sous ces cartes, un bouton noir plein **« Voir l'exposition »** mène à
+`exposition.html` : l'accrochage lui-même, en ligne — les dix photographies avec
+leur numéro, leur titre, leur date et leur texte.
+
 Référence de style du site : `HENRI 3 Best.pdf` (82 pages, album Pages/A4) — *non versionné, 406 Mo*.
 
 ## Tenue
@@ -82,10 +86,25 @@ Reprise de l'album *HENRI* : mise en page éditoriale, papier blanc, encre noire
 
 ```
 site/
-├── index.html        # tout : HTML + CSS + JS dans un seul fichier
+├── index.html        # l'invitation : HTML + CSS + JS dans un seul fichier
+├── exposition.html   # les dix photographies de l'exposition, même principe
 ├── images/           # photos optimisées (max 2000 px, qualité 82)
+│   └── expo/         # 01.jpg … 10.jpg — les dix photographies exposées
 └── pdfs/              # henri1.pdf … henri4.pdf
 ```
+
+Chaque page est autonome : elle embarque sa propre copie du CSS et du script
+(fondu au scroll, sélecteur de langue, fondu entre les pages). Il n'y a pas de
+fichier partagé — une modification de la charte se répercute donc à la main
+dans les deux.
+
+**Passage d'une page à l'autre en fondu.** Les liens marqués `data-page-fade`
+(le bouton « Voir l'exposition », les deux retours vers l'invitation) ne
+naviguent pas tout de suite : le clic pose `body.leaving` (opacité 0 en 300 ms),
+puis charge la page suivante, qui réapparaît avec l'animation `page-in`
+(450 ms). Les deux pages étant sur papier blanc, le raccord est invisible.
+`prefers-reduced-motion` rend le lien à une navigation normale, et `pageshow`
+retire la classe quand la page ressort du cache (bouton Précédent).
 
 Chapitres, dans l'ordre — l'invitation et les infos pratiques d'abord,
 le contexte personnel à la fin :
@@ -105,9 +124,11 @@ Précédés de la couverture et d'un sommaire (`#sommaire`) inspiré de la page 
 
 - `CLAUDE.md` — ce fichier
 - `contenu-site.md` — tous les textes, validés par Serge
-- `site/index.html` — le site
-- `site/images/` — photos optimisées
+- `site/index.html` — l'invitation
+- `site/exposition.html` — la page de l'exposition
+- `site/images/` — photos optimisées (dont `expo/01.jpg` … `10.jpg`)
 - `site/pdfs/` — henri1.pdf … henri4.pdf (copiés/renommés depuis `pdfs/HENRI 1.pdf` etc.)
+- `exhibition/` — originaux des dix photographies exposées *(non versionné, ~150 Mo)*
 - `pdfs/` — PDFs originaux (`HENRI 1.pdf` … `HENRI 4.pdf`) *(non versionné à la racine)*
 - `photos/`, `title/`, `notre histoire/` — photos originales non retouchées *(non versionnées, plusieurs Go)*
 - `HENRI 3 Best.pdf` — l'album, référence de style *(non versionné, 406 Mo)*

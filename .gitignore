@@ -2,6 +2,7 @@
 photos/
 title/
 notre histoire/
+exhibition/
 /pdfs/
 *.pdf
 !site/pdfs/*.pdf

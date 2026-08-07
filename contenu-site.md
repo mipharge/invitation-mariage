@@ -104,6 +104,65 @@ Pas d'aperçu PDF intégré. Empilées verticalement sur mobile, 2 colonnes à
 partir de 768px, 4 à partir de 1200px. Vignettes = la couverture réelle de chaque PDF (extraite via
 Quick Look, `sips -Z 1200`, → `site/images/henri1-cover.jpg` etc.).
 
+Sous les quatre cartes, un bouton isolé, plus visible que les liens PDF
+(pilule noire pleine, `.album-link.primary`) :
+
+**Voir l'exposition** / *See the exhibition* → `exposition.html`
+
+Le lien conserve la langue courante (`exposition.html?lang=en` en anglais),
+via l'attribut `data-keep-lang` + `data-base` traité par le script de langue.
+Il passe d'une page à l'autre en fondu (`data-page-fade`), comme les deux
+liens de retour de la page exposition.
+
+---
+
+## 3 bis. Page « exposition.html » — l'exposition en ligne
+
+Page séparée (`site/exposition.html`), même charte, même mécanique FR / EN,
+même `?lang=en`. Elle reprend en ligne l'accrochage montré à la Galerie de la
+Font le 16 août.
+
+Introduction : titre **Henri**, période **13.06.2025 – 17.07.2026**, la ligne
+« Exposition · La Galerie de la Font, Eus · 16.08.2026 », puis :
+
+> Dix photographies, la première année d'Henri, entre Kyoto et Tokyo.
+>
+> *Ten photographs, Henri's first year, between Kyoto and Tokyo.*
+
+Puis les dix planches, en une seule colonne, dans l'ordre. Chaque planche :
+photo pleine largeur, puis numéro (01–10), titre, ligne date · heure · lieu
+(identique dans les deux langues), et le texte. Sur mobile tout s'empile ;
+à partir de 768px le bloc titre et le texte passent côte à côte, la photo est
+centrée (1080px de large, 640px pour les deux verticales, 09 et 10).
+
+| N° | Titre FR | Titre EN | Date · heure · lieu |
+|----|----------|----------|---------------------|
+| 01 | Henri, un jour | Henri, One Day Old | 14.06.2025, 18:42 · Adachi Hospital, Kyoto |
+| 02 | Gion Matsuri, le matin de la procession | Gion Matsuri, the Morning of the Procession | 17.07.2025, 08:42 · Kyoto |
+| 03 | Shinjuku Gyoen | Shinjuku Gyoen | 27.09.2025, 12:39 · Shinjuku Gyoen, Tokyo |
+| 04 | Cent jours | One Hundred Days | 21.09.2025, 14:00 · Asagaya, Tokyo |
+| 05 | Les kochias du parc Showa Kinen | Kochia at Showa Kinen Park | 13.10.2025, 16:04 · Showa Kinen Park, Tachikawa, Tokyo |
+| 06 | La plage de Zushi | Zushi Beach | 03.11.2025, 16:31 · Zushi Beach, Kanagawa |
+| 07 | La fin de l'année en famille | The End of the Year, with Family | 28.12.2025, 19:30 · Tourouyama-cho, Kyoto |
+| 08 | Les pruniers du parc Koganei | Plum Blossoms, Koganei Park | 21.02.2026, 14:57 · Koganei Park, Tokyo |
+| 09 | Le premier anniversaire | First Birthday | 13.06.2026, 18:57 · Itabashi, Tokyo |
+| 10 | Gion Matsuri, un an plus tard | Gion Matsuri, One Year Later | 17.07.2026, 08:18 · Tourouyama, Gion Matsuri, Kyoto |
+
+Les textes complets (FR et EN) sont dans la page elle-même : le français dans
+le DOM, l'anglais dans le `data-en` du paragraphe. Seul le titre 03
+(« Shinjuku Gyoen ») est identique dans les deux langues, donc sans `data-en`.
+
+Photos : `site/images/expo/01.jpg` … `10.jpg` (originaux dans `exhibition/`,
+non versionné, réduits à 2000px de long côté avec `sips`, chacun sous 500 Ko).
+09 et 10 sont verticales, les huit autres horizontales. `loading="lazy"`,
+`width` / `height` sur chaque `<img>` pour éviter le décalage de mise en page.
+
+Retour vers l'invitation à deux endroits : un petit lien « ← Retour à
+l'invitation » en haut, et le bouton plein « Retour à l'invitation » en bas,
+sous la signature Serge & Ayano. Les deux gardent la langue courante.
+
+`og:image` de la page : `images/expo/06.jpg` (la plage de Zushi).
+
 ---
 
 ## 4. Notre histoire
@@ -141,6 +200,12 @@ Photos : `notre histoire/osaka aout 1997.jpg`, `kyoto juillet 1998.jpg`,
 `kyoto mai 2020.jpg`, `france aout 2023.jpg`, `tokyo avril 2024.jpg`,
 `tokyo juillet 2024.jpg`, `kyoto juin 2025.jpg`, `eus aout 2026.jpg` →
 `site/images/histoire-*.jpg` (toutes fournies, aucun placeholder restant).
+
+Photo d'ouverture du chapitre : `site/images/expo/10.jpg` — la photographie 10
+de l'exposition (Gion Matsuri 2026, tous les trois devant le char du
+Tourouyama). Elle est verticale, donc les visages restent bas dans le cadrage
+plein écran, loin du titre « Notre histoire » posé en haut à gauche
+(`object-position:50% 80%` pour garder la famille dans le champ sur écran large).
 
 Toutes les photos de la section (l'ouverture de chapitre comprise) sont
 affichées en noir et blanc, via `filter:grayscale(1)` en CSS — les fichiers

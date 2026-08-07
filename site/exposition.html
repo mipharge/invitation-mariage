@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Henri — Exposition · Serge &amp; Ayano, Eus, 16 août 2026</title>
+<meta name="description" content="Henri — dix photographies, 13.06.2025 – 17.07.2026. L'exposition présentée à La Galerie de la Font, à Eus, le 16 août 2026.">
+<meta property="og:title" content="Henri — Exposition">
+<meta property="og:description" content="Dix photographies, du 13 juin 2025 au 17 juillet 2026. La Galerie de la Font, Eus.">
+<meta property="og:image" content="images/expo/06.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111111;
+  --ink-soft:#5a5a5a;
+  --paper:#ffffff;
+  --rule:#d8d8d8;
+  --mar:24px;
+  --serif:"Gilda Display","Playfair Display","Didot",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-weight:400;
+  font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;width:100%;height:auto}
+
+/* ---------- shared type ---------- */
+.label{
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-soft);font-weight:700;
+}
+.date{font-size:11px;letter-spacing:.06em;color:var(--ink-soft);font-variant-numeric:lining-nums}
+.chapter-title{
+  font-size:clamp(32px,12vw,116px);
+  line-height:.9;letter-spacing:.02em;text-transform:uppercase;font-weight:700;
+}
+.prose{font-size:clamp(15px,4.1vw,18px);line-height:1.75;max-width:36em}
+.pull{font-size:clamp(20px,6vw,30px);line-height:1.35;font-style:italic;max-width:22em}
+
+/* ---------- language toggle ---------- */
+.lang-toggle{
+  position:fixed;top:14px;right:var(--mar);z-index:50;
+  display:flex;align-items:center;gap:7px;
+  padding:6px 11px;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--paper);border:1px solid var(--rule);
+  border-radius:999px;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.lang-toggle button{
+  font-family:inherit;font-size:inherit;letter-spacing:inherit;text-transform:inherit;
+  background:none;border:0;padding:0;cursor:pointer;color:var(--ink-soft);
+}
+.lang-toggle button[aria-pressed="true"]{color:var(--ink);font-weight:700}
+.lang-toggle .sep{color:var(--rule)}
+
+/* ---------- intro ---------- */
+.intro{padding:64px var(--mar) 8px}
+.back-top{
+  display:inline-block;margin-bottom:44px;
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-soft);text-decoration:none;
+}
+.back-top:hover{color:var(--ink)}
+.intro-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.intro-head .date{white-space:nowrap;text-align:right;padding-top:.5em}
+.intro .label{display:block;margin-top:36px}
+.intro .pull{margin-top:14px}
+
+/* ---------- planches ---------- */
+.plates{padding:0 0 8px}
+.plate{margin-top:72px}
+.plate-fig{margin:0}
+.plate-body{padding:18px var(--mar) 0}
+.plate-num{font-size:11px;letter-spacing:.18em;color:var(--ink-soft);font-variant-numeric:lining-nums}
+.plate-title{
+  font-size:clamp(21px,6.4vw,30px);line-height:1.15;
+  text-transform:uppercase;letter-spacing:.03em;font-weight:700;
+  margin-top:10px;
+}
+.plate-meta{
+  margin-top:10px;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+  font-variant-numeric:lining-nums;
+}
+.plate-body .prose{margin-top:18px}
+
+/* ---------- retour ---------- */
+.rule{height:1px;background:var(--rule);margin:0 var(--mar)}
+.outro{padding:64px var(--mar) 80px;text-align:center}
+.album-link{
+  display:inline-block;margin-top:24px;padding:14px 28px;
+  border:1px solid var(--ink);border-radius:999px;
+  background:var(--ink);color:var(--paper);text-decoration:none;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  transition:background .25s ease,color .25s ease;
+}
+.album-link:hover{background:var(--paper);color:var(--ink)}
+.outro .mark{font-size:clamp(22px,7vw,34px);text-transform:uppercase;letter-spacing:.06em;line-height:1.1}
+.outro .mark .amp{font-style:italic;text-transform:none}
+.outro .date{margin-top:12px;display:block}
+
+/* ---------- fondu d'une page à l'autre ---------- */
+@keyframes page-in{from{opacity:0}to{opacity:1}}
+body{animation:page-in .45s ease}
+body.leaving{opacity:0;transition:opacity .3s ease}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  body{animation:none}
+  body.leaving{opacity:1;transition:none}
+}
+
+/* ---------- desktop ---------- */
+@media (min-width:768px){
+  :root{--mar:56px}
+  body{font-size:17px}
+  .intro{padding:104px var(--mar) 16px}
+  .plate{margin-top:120px}
+  .plate-fig{max-width:1080px;margin:0 auto}
+  .plate-fig.tall{max-width:640px}
+  .plate-body{
+    max-width:1080px;margin:0 auto;padding:26px var(--mar) 0;
+    display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;
+  }
+  .plate-body .prose{margin-top:0;max-width:34em}
+  .outro{padding:104px var(--mar) 112px}
+}
+@media (min-width:1200px){
+  :root{--mar:88px}
+  .plate-body{padding-left:0;padding-right:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ SÉLECTEUR DE LANGUE ============ -->
+<div class="lang-toggle">
+  <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+  <span class="sep" aria-hidden="true">/</span>
+  <button type="button" data-lang="en" aria-pressed="false">EN</button>
+</div>
+
+<!-- ============ INTRODUCTION ============ -->
+<header class="intro">
+  <a class="back-top" href="index.html" data-base="index.html" data-keep-lang data-page-fade data-en="← Back to the invitation">← Retour à l'invitation</a>
+  <div class="intro-head rv">
+    <h1 class="chapter-title">Henri</h1>
+    <span class="date">13.06.2025 – 17.07.2026</span>
+  </div>
+  <div class="rv">
+    <span class="label" data-en="Exhibition · La Galerie de la Font, Eus · 16.08.2026">Exposition · La Galerie de la Font, Eus · 16.08.2026</span>
+    <p class="pull" data-en="Ten photographs, Henri's first year, between Kyoto and Tokyo.">Dix photographies, la première année d'Henri, entre Kyoto et Tokyo.</p>
+  </div>
+</header>
+
+<!-- ============ LES DIX PLANCHES ============ -->
+<main class="plates">
+
+  <article class="plate rv">
+    <figure class="plate-fig">
+      <img src="images/expo/01.jpg" width="2000" height="1333" loading="lazy" alt="Henri nouveau-né, emmailloté dans son berceau à la maternité">
+    </figure>
+    <div class="plate-body">
+      <div>
+        <p class="plate-num">01</p>
+        <h2 class="plate-title" data-en="Henri, One Day Old">Henri, un jour</h2>
+        <p class="plate-meta">14.06.2025, 18:42 · Adachi Hospital, Kyoto</p>
+      </div>
+      <p class="prose" data-en="Henri was born at 4:41 in the morning on 13 June 2025, earlier than the expected date, at 49 cm and 2,770 g. Ayano was in Kyoto with her mother, Ayako. Serge was in Tokyo and left as soon as the news came. We stayed in hospital for five days. Family could only visit for two hours each afternoon, so those two hours became the centre of the day — Jacques and Mihoko came on the first day, Katsuhiro a few days later, between his shifts driving buses.">Henri est né le 13 juin 2025 à 4h41 du matin, en avance sur le terme, 49 cm et 2 770 g. Ayano était à Kyoto avec sa mère, Ayako. Serge était à Tokyo ; il est parti dès qu'il a eu la nouvelle. Nous sommes restés cinq jours à la maternité. La famille ne pouvait venir que deux heures par après-midi, et ces deux heures sont devenues le centre de la journée : Jacques et Mihoko le premier jour, Katsuhiro quelques jours plus tard, entre deux services de bus.</p>
+    </div>
+  </article>
+
+  <article class="plate rv">
+    <figure class="plate-fig">
+      <img src="images/expo/02.jpg" width="2000" height="1500" loading="lazy" alt="Serge en tenue de Gion Matsuri et Ayano portant Henri nouveau-né">
+    </figure>
+    <div class="plate-body">
+      <div>
+        <p class="plate-num">02</p>
+        <h2 class="plate-title" data-en="Gion Matsuri, the Morning of the Procession">Gion Matsuri, le matin de la procession</h2>
+        <p class="plate-meta">17.07.2025, 08:42 · Kyoto</p>
+      </div>
+      <p class="prose" data-en="Gion Matsuri has always been part of the Garrigue family's year, but this one was different: Serge had been chosen as Seishi, the representative of Tourouyama, and had to perform the ritual in front of the mayor of Kyoto. It rained hard from the morning on. We were still in Kyoto on Serge's paternity leave then, moving between the Garrigue house in Tourouyama-cho and Ayano's family home in Kujo. This was taken just before Serge left. Henri was one month old; he and Ayano watched the procession on television at the Garrigue house.">Le Gion Matsuri a toujours fait partie de l'année des Garrigue, mais celui-ci était différent : Serge avait été choisi comme Seishi, représentant du Tourouyama, et devait accomplir le rituel devant le maire de Kyoto. Il a plu fort toute la journée. Nous étions encore à Kyoto pendant le congé paternité de Serge, entre la maison des Garrigue à Tourouyama-cho et la famille d'Ayano à Kujo. Cette photo a été prise juste avant son départ. Henri avait un mois ; il a regardé la procession à la télévision, avec Ayano, à la maison des Garrigue.</p>
+    </div>
+  </article>
+
+  <article class="plate rv">
+    <figure class="plate-fig">
+      <img src="images/expo/03.jpg" width="2000" height="1501" loading="lazy" alt="Serge allongé dans l'herbe soulève Henri à bout de bras, la poussette à côté">
+    </figure>
+    <div class="plate-body">
+      <div>
+        <p class="plate-num">03</p>
+        <h2 class="plate-title">Shinjuku Gyoen</h2>
+        <p class="plate-meta">27.09.2025, 12:39 · Shinjuku Gyoen, Tokyo</p>
+      </div>
+      <p class="prose" data-en="By autumn we had settled into Asagaya and into a routine: weekends meant a park, chosen by mood — Umesato Chuo, Wadabori, Sanshi no Mori, or Shinjuku Gyoen when we wanted more room. Henri was three and a half months old and would fall asleep in the stroller almost as soon as we arrived. That week we also spent a day with Masato, Serge's childhood friend, and his family. It was the first time Henri met children close to his own age.">À l'automne, nous avions pris nos habitudes à Asagaya : le week-end, un parc, choisi selon l'humeur — Umesato Chuo, Wadabori, Sanshi no Mori, ou le Shinjuku Gyoen quand nous voulions plus d'espace. Henri avait trois mois et demi et s'endormait dans la poussette presque dès notre arrivée. Cette semaine-là, nous avons aussi passé une journée avec Masato, ami d'enfance de Serge, et sa famille. C'était la première fois qu'Henri rencontrait des enfants de son âge.</p>
+    </div>
+  </article>
+
+  <article class="plate rv">
+    <figure class="plate-fig">
+      <img src="images/expo/04.jpg" width="2000" height="1333" loading="lazy" alt="Henri allongé à côté du repas des cent jours : daurade grillée, makis, soupe">
+    </figure>
+    <div class="plate-body">
+      <div>
+        <p class="plate-num">04</p>
+        <h2 class="plate-title" data-en="One Hundred Days">Cent jours</h2>
+        <p class="plate-meta">21.09.2025, 14:00 · Asagaya, Tokyo</p>
+      </div>
+      <p class="prose" data-en="Henri turned one hundred days old on 21 September. Ayano grilled a sea bream and used the vessels we had been given by Yasaka Shrine at his Omiya Mairi in July — the same day Serge turned twenty-seven. Our flat in Asagaya was small, but the balcony on the tenth floor gave us a view over the neighbourhood.">Henri a eu cent jours le 21 septembre. Ayano a grillé une daurade et dressé le repas dans la vaisselle reçue du sanctuaire Yasaka lors de son Omiya Mairi en juillet — le jour même des vingt-sept ans de Serge. Notre appartement à Asagaya était petit, mais le balcon du dixième étage donnait sur le quartier.</p>
+    </div>
+  </article>
+
+  <article class="plate rv">
+    <figure class="plate-fig">
+      <img src="images/expo/05.jpg" width="2000" height="1414" loading="lazy" alt="Ayano porte Henri au milieu des kochias rouges du parc Showa Kinen">
+    </figure>
+    <div class="plate-body">
+      <div>
+        <p class="plate-num">05</p>
+        <h2 class="plate-title" data-en="Kochia at Showa Kinen Park">Les kochias du parc Showa Kinen</h2>
+        <p class="plate-meta">13.10.2025, 16:04 · Showa Kinen Park, Tachikawa, Tokyo</p>
+      </div>
+      <p class="prose" data-en="By October Henri could manage longer outings, and we started going further than the neighbourhood parks — Tachikawa, Zushi, Ayabe, Uzumasa. The kochia at Showa Kinen Park turn from green to red over about two weeks, and we went in the middle of it. Henri was four months old. This day became the opening of the album Henri 3.">En octobre, Henri supportait des sorties plus longues et nous avons commencé à aller plus loin que les parcs du quartier — Tachikawa, Zushi, Ayabe, Uzumasa. Les kochias du parc Showa Kinen passent du vert au rouge en une quinzaine de jours ; nous y sommes allés au milieu de ce passage. Henri avait quatre mois. Cette journée ouvre l'album Henri 3.</p>
+    </div>
+  </article>
+
+  <article class="plate rv">
+    <figure class="plate-fig">
+      <img src="images/expo/06.jpg" width="2000" height="1414" loading="lazy" alt="Ayano et Henri en contre-jour devant le coucher de soleil sur la baie de Sagami">
+    </figure>
+    <div class="plate-body">
+      <div>
+        <p class="plate-num">06</p>
+        <h2 class="plate-title" data-en="Zushi Beach">La plage de Zushi</h2>
+        <p class="plate-meta">03.11.2025, 16:31 · Zushi Beach, Kanagawa</p>
+      </div>
+      <p class="prose" data-en="A day trip to the sea in early November. It was Henri's first time at a beach. We stayed until the sun went down over Sagami Bay and then took the train back to Tokyo. Henri was four and a half months old. This photograph ended up on the cover of Henri 3.">Une journée à la mer, début novembre. C'était la première fois qu'Henri voyait une plage. Nous sommes restés jusqu'au coucher du soleil sur la baie de Sagami, puis nous avons repris le train pour Tokyo. Henri avait quatre mois et demi. Cette photographie est devenue la couverture de Henri 3.</p>
+    </div>
+  </article>
+
+  <article class="plate rv">
+    <figure class="plate-fig">
+      <img src="images/expo/07.jpg" width="2000" height="1333" loading="lazy" alt="Jacques assis par terre avec Henri qui joue avec des balles, le sapin de Noël derrière">
+    </figure>
+    <div class="plate-body">
+      <div>
+        <p class="plate-num">07</p>
+        <h2 class="plate-title" data-en="The End of the Year, with Family">La fin de l'année en famille</h2>
+        <p class="plate-meta">28.12.2025, 19:30 · Tourouyama-cho, Kyoto</p>
+      </div>
+      <p class="prose" data-en="We went back to Kyoto for eleven days over Christmas and the New Year, staying at the Garrigue house in Tourouyama-cho where Serge grew up. It was Henri's first Christmas, spent with the family and with the tree still up in the corner of the room. He was six months old and had just started to crawl, which changed the shape of the days — most of them were now spent on the floor. Jacques, Serge's father, spent much of that week down there with him.">Nous sommes retournés à Kyoto onze jours, pour Noël et le Nouvel An, dans la maison des Garrigue à Tourouyama-cho où Serge a grandi. C'était le premier Noël d'Henri, en famille, le sapin encore dressé dans un coin de la pièce. Il avait six mois et venait de commencer à ramper, ce qui a changé la forme des journées : elles se passaient désormais par terre. Jacques, le père de Serge, y a passé une bonne partie de la semaine avec lui.</p>
+    </div>
+  </article>
+
+  <article class="plate rv">
+    <figure class="plate-fig">
+      <img src="images/expo/08.jpg" width="2000" height="1414" loading="lazy" alt="Ayano porte Henri devant les pruniers en fleurs du parc Koganei">
+    </figure>
+    <div class="plate-body">
+      <div>
+        <p class="plate-num">08</p>
+        <h2 class="plate-title" data-en="Plum Blossoms, Koganei Park">Les pruniers du parc Koganei</h2>
+        <p class="plate-meta">21.02.2026, 14:57 · Koganei Park, Tokyo</p>
+      </div>
+      <p class="prose" data-en="That winter Serge went to India twice for work. While he was away, Ayano and Henri stayed in Kyoto, surrounded by family. By the time we were all back in Tokyo the plum trees had started to open, and we went to Koganei Park to walk among them. Henri was eight months old. It was the end of a winter we had spent mostly apart.">Cet hiver-là, Serge est parti deux fois en Inde pour son travail. Pendant ses absences, Ayano et Henri sont restés à Kyoto, entourés de la famille. Quand nous nous sommes retrouvés à Tokyo, les pruniers commençaient à fleurir et nous sommes allés marcher parmi eux au parc de Koganei. Henri avait huit mois. C'était la fin d'un hiver passé surtout séparés.</p>
+    </div>
+  </article>
+
+  <article class="plate rv">
+    <figure class="plate-fig tall">
+      <img src="images/expo/09.jpg" width="1501" height="2000" loading="lazy" alt="Henri assis à table devant son gâteau d'anniversaire, sous une guirlande Happy Birthday">
+    </figure>
+    <div class="plate-body">
+      <div>
+        <p class="plate-num">09</p>
+        <h2 class="plate-title" data-en="First Birthday">Le premier anniversaire</h2>
+        <p class="plate-meta">13.06.2026, 18:57 · Itabashi, Tokyo</p>
+      </div>
+      <p class="prose" data-en="In spring we moved from Asagaya to Itabashi and Serge started a new job. A new flat, new work, and by summer a Henri who could stand, walk along the furniture, feed himself, and get into everything. We spent his first birthday at home, the three of us.">Au printemps, nous avons déménagé d'Asagaya à Itabashi et Serge a commencé un nouveau travail. Un nouvel appartement, un nouveau poste, et à l'été un Henri qui tenait debout, marchait le long des meubles, mangeait tout seul et touchait à tout. Nous avons passé son premier anniversaire à la maison, tous les trois.</p>
+    </div>
+  </article>
+
+  <article class="plate rv">
+    <figure class="plate-fig tall">
+      <img src="images/expo/10.jpg" width="1501" height="2000" loading="lazy" alt="Serge en tenue de Gion Matsuri, Ayano et Henri devant le char du Tourouyama">
+    </figure>
+    <div class="plate-body">
+      <div>
+        <p class="plate-num">10</p>
+        <h2 class="plate-title" data-en="Gion Matsuri, One Year Later">Gion Matsuri, un an plus tard</h2>
+        <p class="plate-meta">17.07.2026, 08:18 · Tourouyama, Gion Matsuri, Kyoto</p>
+      </div>
+      <p class="prose" data-en="Exactly one year after the second photograph in this series, on the same street, at nearly the same hour, and again taken just before the procession set off. This year Serge served as Fukushi, the one who stands beside the Seishi during the ceremony. Henri, now thirteen months old, watched it on television again — this time from Ayano's family home in Kujo rather than the Garrigue house. Summer in Japan is full of events, and that year we went from one to the next: Gion Matsuri, the mitarashi festivals, the fireworks.">Exactement un an après la deuxième photographie de la série, dans la même rue, à peu près à la même heure, et là encore juste avant le départ de la procession. Serge y participait cette année comme Fukushi, celui qui se tient à côté du Seishi pendant le rituel. Henri, treize mois, l'a de nouveau regardée à la télévision — cette fois depuis la maison de la famille d'Ayano à Kujo. L'été au Japon est plein de fêtes, et cette année-là nous sommes allés de l'une à l'autre : Gion Matsuri, les mitarashi matsuri, les feux d'artifice.</p>
+    </div>
+  </article>
+
+</main>
+
+<!-- ============ RETOUR ============ -->
+<div class="outro">
+  <div class="rule" style="margin:0 0 56px"></div>
+  <div class="mark">Serge <span class="amp">&amp;</span> Ayano</div>
+  <span class="date" data-en="Eus · 16 August 2026">Eus · 16 août 2026</span>
+  <br>
+  <a class="album-link" href="index.html" data-base="index.html" data-keep-lang data-page-fade data-en="Back to the invitation">Retour à l'invitation</a>
+</div>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('in')});
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.06});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+/* ---------- fondu en quittant la page vers l'autre page du site ---------- */
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.addEventListener('click', function(e){
+    if(e.defaultPrevented || e.button !== 0) return;
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[data-page-fade]');
+    if(!a) return;
+    if(reduce.matches) return; // navigation normale
+    e.preventDefault();
+    document.body.classList.add('leaving');
+    setTimeout(function(){ window.location.href = a.href; }, 300);
+  });
+  // retour arrière : la page ressort du cache, on enlève le fondu
+  window.addEventListener('pageshow', function(e){
+    if(e.persisted) document.body.classList.remove('leaving');
+  });
+})();
+
+/* ---------- langue : FR par défaut, EN via le sélecteur ou ?lang=en ---------- */
+(function(){
+  var nodes = document.querySelectorAll('[data-en]');
+  nodes.forEach(function(n){ n.setAttribute('data-fr', n.innerHTML); });
+
+  var meta = {
+    fr:{
+      title:'Henri — Exposition · Serge & Ayano, Eus, 16 août 2026',
+      desc:"Henri — dix photographies, 13.06.2025 – 17.07.2026. L'exposition présentée à La Galerie de la Font, à Eus, le 16 août 2026.",
+      ogTitle:'Henri — Exposition',
+      ogDesc:'Dix photographies, du 13 juin 2025 au 17 juillet 2026. La Galerie de la Font, Eus.'
+    },
+    en:{
+      title:'Henri — Exhibition · Serge & Ayano, Eus, 16 August 2026',
+      desc:'Henri — ten photographs, 13.06.2025 – 17.07.2026. The exhibition shown at La Galerie de la Font, in Eus, on 16 August 2026.',
+      ogTitle:'Henri — Exhibition',
+      ogDesc:'Ten photographs, from 13 June 2025 to 17 July 2026. La Galerie de la Font, Eus.'
+    }
+  };
+
+  var buttons = document.querySelectorAll('.lang-toggle button');
+  var keepLang = document.querySelectorAll('a[data-keep-lang]');
+
+  function setMeta(name, value, isProperty){
+    var el = document.querySelector((isProperty ? 'meta[property="' : 'meta[name="') + name + '"]');
+    if(el) el.setAttribute('content', value);
+  }
+
+  function applyLang(lang){
+    nodes.forEach(function(n){
+      var v = n.getAttribute('data-' + lang);
+      if(v !== null) n.innerHTML = v;
+    });
+    document.documentElement.lang = lang;
+    document.title = meta[lang].title;
+    setMeta('description', meta[lang].desc, false);
+    setMeta('og:title', meta[lang].ogTitle, true);
+    setMeta('og:description', meta[lang].ogDesc, true);
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+    // les liens internes gardent la langue courante
+    keepLang.forEach(function(a){
+      var base = a.getAttribute('data-base');
+      a.setAttribute('href', lang === 'en' ? base + '?lang=en' : base);
+    });
+  }
+
+  var root = document.documentElement;
+
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var lang = b.getAttribute('data-lang');
+      if(lang === root.lang) return;
+      applyLang(lang);
+      // garde le lien partageable : ?lang=en
+      var url = new URL(window.location.href);
+      if(lang === 'en'){ url.searchParams.set('lang','en'); }
+      else { url.searchParams.delete('lang'); }
+      history.replaceState(null, '', url);
+    });
+  });
+
+  var initial = new URLSearchParams(window.location.search).get('lang');
+  if(initial === 'en') applyLang('en');
+})();
+</script>
+</body>
+</html>
